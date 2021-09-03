@@ -24,7 +24,11 @@ test("Example 1: return names of all subordinates of person", () => {
 });
 
 // return company name from email address
-const exercise11 = (email) => {};
+const exercise11 = (email) => {
+  let names = email.split('@');
+  names = names[1].split('.');
+  return names[0]
+};
 
 test("Exercise 1.1: return company name from email address", () => {
   expect(exercise11("katherinecohen@ecraze.com")).toEqual("ecraze");
