@@ -74,7 +74,7 @@ yarn test
 And you will see something like
 ```
 Test Suites: 1 failed, 1 total
-Tests:       13 failed, 5 passed, 18 total
+Tests:       12 failed, 6 passed, 18 total
 ```
 
 There are 13 small functions for you to complete, while we've provided 5 completed example for your reference along with hints.
