@@ -36,7 +36,11 @@ test("Exercise 1.1: return company name from email address", () => {
 });
 
 // given a person, return list of companies of her subordinates
-const exercise12 = (person) => {};
+const exercise12 = (person) => {
+  return person.subordinates.map(
+    (subordinate) => exercise11(subordinate.email)
+  );
+};
 
 test("Exercise 1.2: given a person, return list of companies of her subordinates", () => {
   expect(exercise12(CruzHarrell)).toEqual([
@@ -230,7 +234,9 @@ test("Exercise 5.2: given maxDistance, return number of employees who lives with
 
 // return first name (not full name) of all person who has the same company as their manager
 // hint: exercise11
-const exercise53 = () => {};
+const exercise53 = () => {
+  
+};
 
 test("Exercise 5.3: return first name (not full name) of all person who has the same company as their manager", () => {
   expect(exercise53()).toEqual(["Suzanne", "Gregory", "Buchanan"]);
