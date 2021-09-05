@@ -177,7 +177,14 @@ test("Exercise 3.2a: given a person, return difference between female and male s
 */
 
 // implement map function
-const map = (array, func) => {};
+const map = (array, func) => {
+  let mapArr = []
+  for (let i = 0; i < array.length; i++) {
+    let mapFA = func(array[i]);
+    mapArr.push(mapFA);
+  }
+  return mapArr;
+};
 
 test("Exercise 4.1: implement map function", () => {
   const m1 = [Math.random(), Math.random(), Math.random(), Math.random()];
