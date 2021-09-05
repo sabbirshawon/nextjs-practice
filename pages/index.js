@@ -75,8 +75,6 @@ const Snake = () => {
   const [snake, setSnake] = useState(getDefaultSnake());
   const [direction, setDirection] = useState(Direction.Right);
 
-  const [ScoreIncrease, setScoreIncrease]=useState(false);
-
   const [food, setFood] = useState({ x: 4, y: 10 });
   const [score, setScore] = useState(0);
 
@@ -92,12 +90,8 @@ const Snake = () => {
         const newSnake = [newHead, ...snake];
 
         // remove tail
-        if(!ScoreIncrease)
-        {
-          newSnake.pop();
-        }
-        setScoreIncrease((ScoreIncrease)=>false);
-        
+        newSnake.pop();
+
         return newSnake;
       });
     };
@@ -106,7 +100,7 @@ const Snake = () => {
     const timer = setInterval(runSingleStep, 500);
 
     return () => clearInterval(timer);
-  }, [direction, food, ScoreIncrease]);
+  }, [direction, food]);
 
   // update score whenever head touches a food
   useEffect(() => {
@@ -115,8 +109,6 @@ const Snake = () => {
       setScore((score) => {
         return score + 1;
       });
-
-      setScoreIncrease((ScoreIncrease)=>true);
 
       let newFood = getRandomCell();
       while (isSnake(newFood)) {
