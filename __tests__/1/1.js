@@ -223,7 +223,13 @@ test("Exercise 4.2: implement filter function", () => {
 });
 
 // implement reduce
-const reduce = (array, func, initalValue) => {};
+const reduce = (array, func, initalValue) => {
+  let redFunc = initalValue;
+  for (let i = 0; i < array.length; i++) {
+    redf = func(redFunc, array[i]);
+  }
+  return redFunc;
+};
 
 test("Exercise 4.3: implement reduce function", () => {
   const r1 = [Math.random(), Math.random(), Math.random(), Math.random()];
