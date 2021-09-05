@@ -155,13 +155,14 @@ test("Exercise 3.2: given a person, return difference between female and male su
 
 // do the same exercise32, but with using only 1 reduce function and nothing else
 const exercise32a = (person) => {
-  let male=0
-  let female=0
-  for(let item of person.subordinates){
-    if(item.gender=='male') male++
-    else female++
-  }
-  return female - male
+  return person.subordinates.reduce(
+    (total, subordinate) => 
+    {
+      if (subordinate.gender === "male") 
+        return --total;
+      else 
+        return ++total;
+    }, 0);
 };
 
 test("Exercise 3.2a: given a person, return difference between female and male subordinates", () => {
