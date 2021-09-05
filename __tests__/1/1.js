@@ -310,7 +310,21 @@ test("Exercise 5.2: given maxDistance, return number of employees who lives with
 // return first name (not full name) of all person who has the same company as their manager
 // hint: exercise11
 const exercise53 = () => {
-  
+  let persons = [];
+  const getPersons = (person) => {
+    person.subordinates.forEach((subordinate) => {
+      let personCompany = exercise11(person.email);
+      let managerCompany = exercise11(subordinate.email);
+      if (personCompany === managerCompany)
+      {
+        people.push(subordinate.name.split(' ')[0]);
+        getPersons(subordinate);
+      }
+    });
+  };
+
+  getPersons(CruzHarrell);
+  return persons;
 };
 
 test("Exercise 5.3: return first name (not full name) of all person who has the same company as their manager", () => {
