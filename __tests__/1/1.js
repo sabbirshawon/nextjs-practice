@@ -226,7 +226,7 @@ test("Exercise 4.2: implement filter function", () => {
 const reduce = (array, func, initalValue) => {
   let redFunc = initalValue;
   for (let i = 0; i < array.length; i++) {
-    redf = func(redFunc, array[i]);
+    redFunc = func(redFunc, array[i]);
   }
   return redFunc;
 };
@@ -298,7 +298,9 @@ test("distance: given two locations, return the distance between them", () => {
 });
 
 // given maxDistance, return number of employees who lives within maxDistance distance of their managers
-const exercise52 = (maxDistance) => {};
+const exercise52 = (maxDistance) => {
+  
+};
 
 test("Exercise 5.2: given maxDistance, return number of employees who lives within maxDistance distance of their managers", () => {
   expect(exercise52(5)).toEqual(25);
