@@ -195,7 +195,17 @@ test("Exercise 4.1: implement map function", () => {
 });
 
 // implement filter function
-const filter = (array, func) => {};
+const filter = (array, func) => {
+  let mapArr = [];
+  for (let i = 0; i < array.length; i++) {
+    let mapFA = array[i];
+    if (func(mapFA))
+    {
+      mapArr.push(mapFA);
+    }
+  }
+  return mapArr;
+};
 
 test("Exercise 4.2: implement filter function", () => {
   const f1 = [
