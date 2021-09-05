@@ -138,7 +138,15 @@ test("Exercise 3.1: given a person, return average age of her subordinates", () 
 
 // given a person, return difference between female and male subordinates
 // e.g: if someone has 4 female subordinates and 7 male subordinates, return -3(=4-7)
-const exercise32 = (person) => {};
+const exercise32 = (person) => {
+  let male=0
+  let female=0
+  for(let item of person.subordinates){
+    if(item.gender=='male') male++
+    else female++
+  }
+  return female - male
+};
 
 test("Exercise 3.2: given a person, return difference between female and male subordinates", () => {
   expect(exercise32(CruzHarrell)).toEqual(2);
@@ -146,7 +154,15 @@ test("Exercise 3.2: given a person, return difference between female and male su
 });
 
 // do the same exercise32, but with using only 1 reduce function and nothing else
-const exercise32a = (person) => {};
+const exercise32a = (person) => {
+  let male=0
+  let female=0
+  for(let item of person.subordinates){
+    if(item.gender=='male') male++
+    else female++
+  }
+  return female - male
+};
 
 test("Exercise 3.2a: given a person, return difference between female and male subordinates", () => {
   expect(exercise32a(CruzHarrell)).toEqual(2);
