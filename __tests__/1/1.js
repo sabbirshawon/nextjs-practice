@@ -264,7 +264,20 @@ test("Example 5: return total number of people in the dataset", () => {
 });
 
 // given a color, return number of people who have that eye color
-const exercise51 = (color) => {};
+const exercise51 = (color) => {
+  let totalPeople = 0;
+  const getPeopleEyeColor = (person) => {
+    if (person.eyeColor === color) 
+    {
+      totalPeople++;
+    }
+    person.subordinates.forEach((subordinate) => {
+      getPeopleEyeColor(subordinate);
+    });
+  };
+  getPeopleEyeColor(CruzHarrell);
+  return totalPeople;
+};
 
 test("Exercise 5.1: given a color, return number of people who have that eye color", () => {
   expect(exercise51("green")).toEqual(11);
